@@ -1,0 +1,217 @@
+{
+  "generated_with": "train_models.py (RandomizedSearchCV-tuned, validation-calibrated threshold, SHAP-explained)",
+  "random_state": 42,
+  "data_split": {
+    "train": 300000,
+    "validation": 100000,
+    "test": 100000,
+    "train_pct": 60.0,
+    "validation_pct": 20.0,
+    "test_pct": 20.0
+  },
+  "hyperparameter_search_note": "Search performed on a 70k-row stratified subsample of the training split for tractable runtime; the winning configuration is refit on the full train+validation data (400k rows) before evaluation.",
+  "failure_prediction": {
+    "model": "HistGradientBoostingClassifier",
+    "best_hyperparameters": {
+      "min_samples_leaf": 100,
+      "max_leaf_nodes": 15,
+      "max_iter": 300,
+      "learning_rate": 0.03,
+      "l2_regularization": 0.0
+    },
+    "cv_average_precision_mean": 0.7418751647966744,
+    "cv_average_precision_std": 0.017485845122543194,
+    "validation_threshold_tuning": {
+      "best_f1_threshold": 0.894090441576441,
+      "precision_at_best_f1": 0.6378037320445697,
+      "recall_at_best_f1": 0.7910422910422911,
+      "f1_at_best_f1": 0.7062058714227684,
+      "high_precision_threshold": 0.957284388845001
+    },
+    "test_metrics_default_threshold": {
+      "threshold": 0.5,
+      "roc_auc": 0.9830579119017744,
+      "average_precision": 0.7531858177483581,
+      "accuracy": 0.92668,
+      "precision": 0.4491642386137096,
+      "recall": 0.9753579753579753,
+      "f1": 0.6150776984460311,
+      "confusion_matrix": [
+        [
+          86810,
+          7184
+        ],
+        [
+          148,
+          5858
+        ]
+      ]
+    },
+    "test_metrics_tuned_threshold": {
+      "threshold": 0.894090441576441,
+      "roc_auc": 0.9830579119017744,
+      "average_precision": 0.7531858177483581,
+      "accuracy": 0.9617,
+      "precision": 0.645610278372591,
+      "recall": 0.8031968031968032,
+      "f1": 0.715833209675026,
+      "confusion_matrix": [
+        [
+          91346,
+          2648
+        ],
+        [
+          1182,
+          4824
+        ]
+      ]
+    },
+    "top_shap_features": [
+      {
+        "feature": "Operational_Hours",
+        "mean_abs_shap": 3.0456817581446383
+      },
+      {
+        "feature": "Vibration_mms",
+        "mean_abs_shap": 0.06811351149555364
+      },
+      {
+        "feature": "Temperature_C",
+        "mean_abs_shap": 0.060801689702996965
+      },
+      {
+        "feature": "Hours_Per_Maintenance",
+        "mean_abs_shap": 0.009602911124649756
+      },
+      {
+        "feature": "Age_Overdue_Interaction",
+        "mean_abs_shap": 0.007500087507937994
+      },
+      {
+        "feature": "Machine_Type",
+        "mean_abs_shap": 0.0051487916563178315
+      },
+      {
+        "feature": "Vibration_Power_Ratio",
+        "mean_abs_shap": 0.004805307982295015
+      },
+      {
+        "feature": "Power_Consumption_kW",
+        "mean_abs_shap": 0.004655555146485206
+      },
+      {
+        "feature": "Sensor_Stress_Index",
+        "mean_abs_shap": 0.004208648933694309
+      },
+      {
+        "feature": "Maintenance_Frequency",
+        "mean_abs_shap": 0.004106082853500758
+      },
+      {
+        "feature": "Failure_History_Rate",
+        "mean_abs_shap": 0.0036092203725555942
+      },
+      {
+        "feature": "Sound_dB",
+        "mean_abs_shap": 0.0034619238706701558
+      },
+      {
+        "feature": "Installation_Year",
+        "mean_abs_shap": 0.0032804369285868067
+      },
+      {
+        "feature": "Fluid_Level_Deficit",
+        "mean_abs_shap": 0.003179768750565034
+      },
+      {
+        "feature": "Coolant_Level_pct",
+        "mean_abs_shap": 0.0030819898565072135
+      }
+    ]
+  },
+  "rul_prediction": {
+    "model": "HistGradientBoostingRegressor",
+    "best_hyperparameters": {
+      "min_samples_leaf": 50,
+      "max_leaf_nodes": 15,
+      "max_iter": 300,
+      "learning_rate": 0.05,
+      "l2_regularization": 0.5
+    },
+    "cv_r2_mean": 0.9718902678383295,
+    "cv_r2_std": 0.0005449296680040626,
+    "test_metrics": {
+      "mae_days": 38.055014537827425,
+      "rmse_days": 48.2241031564468,
+      "r2": 0.9720612391219443
+    },
+    "top_shap_features": [
+      {
+        "feature": "Operational_Hours",
+        "mean_abs_shap": 246.89263671660314
+      },
+      {
+        "feature": "Vibration_mms",
+        "mean_abs_shap": 7.157333455542181
+      },
+      {
+        "feature": "Temperature_C",
+        "mean_abs_shap": 5.557333895855691
+      },
+      {
+        "feature": "Sensor_Stress_Index",
+        "mean_abs_shap": 0.6305623560413269
+      },
+      {
+        "feature": "Power_Consumption_kW",
+        "mean_abs_shap": 0.37589492601054575
+      },
+      {
+        "feature": "Vibration_Power_Ratio",
+        "mean_abs_shap": 0.2648485710183708
+      },
+      {
+        "feature": "Hours_Per_Maintenance",
+        "mean_abs_shap": 0.21596022280706498
+      },
+      {
+        "feature": "Machine_Type",
+        "mean_abs_shap": 0.061561545318035794
+      },
+      {
+        "feature": "Maintenance_Frequency",
+        "mean_abs_shap": 0.05728954179078184
+      },
+      {
+        "feature": "Last_Maintenance_Days_Ago",
+        "mean_abs_shap": 0.046752669126861546
+      },
+      {
+        "feature": "Maintenance_History_Count",
+        "mean_abs_shap": 0.03294165655204256
+      },
+      {
+        "feature": "Coolant_Level_pct",
+        "mean_abs_shap": 0.028826651725901892
+      },
+      {
+        "feature": "Age_Overdue_Interaction",
+        "mean_abs_shap": 0.02228782972871167
+      },
+      {
+        "feature": "Sound_dB",
+        "mean_abs_shap": 0.0213977680778263
+      },
+      {
+        "feature": "Installation_Year",
+        "mean_abs_shap": 0.015310749685749568
+      }
+    ]
+  },
+  "risk_zone_thresholds": {
+    "red_probability": 0.957284388845001,
+    "yellow_probability": 0.894090441576441,
+    "red_rul_days": 30.0,
+    "yellow_rul_days": 90.0
+  }
+}
