@@ -1,6 +1,6 @@
 # 🏭 Industrial IoT Predictive Maintenance
 
-[![CI](https://github.com/varenyam/industrial-iot-predictive-maintenance/actions/workflows/ci.yml/badge.svg)](https://github.com/varenyam/industrial-iot-predictive-maintenance/actions)
+[![CI](https://github.com/Varenyam1048/-industrial-iot-predictive-maintenance/actions/workflows/ci.yml/badge.svg)](https://github.com/Varenyam1048/-industrial-iot-predictive-maintenance/actions)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
